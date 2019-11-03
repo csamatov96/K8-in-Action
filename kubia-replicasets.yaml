@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta2 
+kind: ReplicaSets 
+metadata:
+  name: kubia
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubia 
+  template: #the pod template for creating new pods 
+    metadata:
+      labels:
+        app: kubia 
+    spec:
+      containers:
+      - name: kubia
+        image: luksa/kubia #replace the image 
+        #ports:
+        #- containerPort: 8080
