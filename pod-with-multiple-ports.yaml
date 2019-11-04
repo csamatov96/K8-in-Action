@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod 
+spec:
+  containers:
+    - name: kubia 
+      ports:
+      - name: http #its name to refer
+        containerPort: 8080 
+      - name: https #its name to refer
+        containerPort: 8443 
