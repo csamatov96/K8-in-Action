@@ -4,6 +4,7 @@ metadata:
   name: batch-job-every-fifteen-minutes 
   spec:
   schedule: "0,15,30,45 * * * *" #this job should run at the 0, 15, 30 and 45 minutes of every hour, every day 
+  #startingDeadlineSeconds: 15 #at the latest, the pod must start running at 15 seconds past the scheduled time
   jobsTemplate:
     spec:
       template: #The template for the Job Resource that will be created by this CronJob
