@@ -1,0 +1,14 @@
+apiVersion: batch/v1 
+kind: Job  #Jobs are in the batch API group, version v1 
+metadata:
+  name: batch-job 
+spec: #U r not specifying a pod selector (it will be created based on the labels in the pod template)
+  template:
+    metadata:
+      labels:
+        app: batch-job
+    spec:
+      restartPolicy: OnFailure #Jobs can't use the default restart policy, which is ALWAYS  
+      containers:
+      - name: main 
+        image: luksa/batch-job 
