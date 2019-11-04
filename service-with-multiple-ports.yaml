@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service 
+metadata:
+  name: kubia 
+spec:
+  ports:
+  - name: http
+    port: 80 #port 80 is mapped to the pod's port 8080
+    targetPort: 8080
+  - name: https
+    port: 443 #port 443 is mapped to pods' port 8443
+    targetPort: 8443
+  selector: #the label selector always applies to the whole service 
+    app: kubia 
