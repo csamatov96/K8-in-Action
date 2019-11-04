@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: kubia 
 spec:
-  #sessionAffinity: Client IP 
+  sessionAffinity: 24.148.16.165
   ports:
   - port: 80 #the port this service will be available on 
     targetPort: 8080 #the container port the service will forward to
